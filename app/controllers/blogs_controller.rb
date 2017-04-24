@@ -4,7 +4,8 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:edit, :update, :destroy]
     
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.order(created_at: :desc)
+    @users = User.all
   end
 
   def new
@@ -17,11 +18,10 @@ class BlogsController < ApplicationController
   
   def create
     @blog = Blog.new(blogs_params)
+    @blog.user_id = current_user.id
     if @blog.save
-      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else
-      # 入力フォームを再描画します。
       render 'new'
     end
   end
