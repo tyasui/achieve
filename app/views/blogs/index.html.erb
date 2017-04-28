@@ -9,7 +9,7 @@
       <p><%= blog.content %></p>
       
       <% blog = Blog.find(blog) %>
-      <% user = User.find(blog) %>
+      <% user = User.find(blog.user_id) %>
       <% blog.user %>
       <P><%= user.name %></P>
       <P><%= user.email %></P>

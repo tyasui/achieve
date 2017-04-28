@@ -29,6 +29,7 @@ end
 
 index=1
 100.times do |index|
+  index = index + 1
   Blog.create(title: "タイトル#{index}", content: "ブログの内容#{index}", user_id: "#{index}")
 end
 
