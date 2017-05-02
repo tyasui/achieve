@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
 
+
   def new
     if params[:back]
       @contact = Contact.new(contacts_params)
