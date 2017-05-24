@@ -62,4 +62,12 @@ gem 'activeresource' #この行を追記する
 
 group :development do
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+gem 'carrierwave'
+gem 'rmagick'
