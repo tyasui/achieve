@@ -5,7 +5,11 @@
       <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
     <% @blogs.each do |blog| %>
     <div class="row">
+
+    <div class="field">
       <h4><strong><%= blog.title %></strong></h4>
+      <%= image_tag(blog.user.image_url) %>
+      
       <p><%= blog.content %></p>
       <P><%= blog.user.name %></P>
       <P><%= blog.user.email %></P>
