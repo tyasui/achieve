@@ -7,9 +7,11 @@
     <div class="row">
 
     <div class="field">
-      <h4><strong><%= blog.title %></strong></h4>
+        <%= link_to blog_path(blog) do %>
+          <h4><strong><%= blog.title %></strong></h4>
+        <% end %>
+        
       <%= image_tag(blog.user.image_url) %>
-      
       <p><%= blog.content %></p>
       <P><%= blog.user.name %></P>
       <P><%= blog.user.email %></P>
