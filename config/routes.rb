@@ -1,6 +1,22 @@
 Rails.application.routes.draw do
 
 
+  get 'notifications/index'
+
+#  get 'messages/index'
+
+#  get 'messages/create'
+
+#  get 'conversations/index'
+
+#  get 'conversations/create'
+
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
+#  get 'users/index'
+
 #  get 'comments/create'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -39,7 +55,16 @@ if Rails.env.development?
 end
 
 resources :poems, only: [:index, :show] #この行を追記する    
-    
+
+resources :users, only: [:index, :show]
+
+resources :relationships, only: [:create, :destroy]
+
+resources :conversations do
+  resources :messages
+end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

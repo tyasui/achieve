@@ -1,0 +1,32 @@
+<h2><strong>お知らせ</strong></h2>
+<ul>
+
+  <hr>
+    <li>
+      <span>
+      <h4>  
+      <table border  align="center">
+        <caption>お知らせ一覧</caption>
+          <tr bgcolor="green">
+            <th><font color="white">インフォメーション</font></th>
+            <th><font color="white">コメント者</font></th>
+            <th><font color="white">内容</font></th>
+            <th><font color="white">ブログパス</font></th>
+            <th><font color="white">日付</font></th>
+          </tr>
+
+        <% @notifications.each do |notification| %>
+          <tr>
+            <td>未読</td>
+            <td><%= notification.comment.user.try(:name) %>さん</td>
+            <td>あなたのブログ（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。</td>
+            <td>（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）</td>
+            <td><%= notification.created_at %></td>
+          </tr>
+        <% end %>
+      </table>
+      </span>
+      </h4>
+    </li>
+  </hr>
+</ul>
