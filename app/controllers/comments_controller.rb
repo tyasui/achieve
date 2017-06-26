@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
   
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
+
       if @comment.save
         format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました。' }
         # JS形式でレスポンスを返します。
@@ -23,10 +24,11 @@ class CommentsController < ApplicationController
         Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
           unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
         })
+        
       else
         format.html { render :new }
       end
-    end
+    end  
   end
 
 
