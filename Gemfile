@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
@@ -27,23 +26,36 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'dotenv-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 gem 'therubyracer', platforms: :ruby
+gem 'jquery-turbolinks'
+gem 'devise'
+gem 'twitter-bootstrap-rails'
+gem 'faker'
+gem 'rails_admin'
+gem 'cancan'
+gem 'activeresource' #この行を追記する
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'pusher'
+gem 'fog'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
   gem 'pry-rails'
   gem 'better_errors'
   gem 'capistrano', '3.6.0'
@@ -51,35 +63,9 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
-
-
 end
-
-gem 'jquery-turbolinks'
-
-gem 'devise'
-gem 'twitter-bootstrap-rails'
-
-gem 'faker'
-
-gem 'rails_admin'
-
-gem 'cancan'
-
-gem 'activeresource' #この行を追記する
 
 group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
 end
-
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-
-gem 'carrierwave'
-gem 'rmagick'
-gem 'pusher'
-gem 'fog'
-gem 'dotenv-rails'
-gem 'unicorn'
