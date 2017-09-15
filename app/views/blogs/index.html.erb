@@ -2,26 +2,27 @@
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <p><%= notice %></p>
     <h1>ブログ一覧</h1>
-      <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
+    <%= link_to "ブログを作成する", new_blog_path, class: 'btn btn-default' %>
+    
     <% @blogs.each do |blog| %>
-    <div class="row">
-
-    <div class="field">
-        <%= link_to blog_path(blog) do %>
-          <h4><strong><%= blog.title %></strong></h4>
-        <% end %>
-        
-      <%= image_tag(blog.user.image_url) %>
-      <p><%= blog.content %></p>
-      <P><%= blog.user.name %></P>
-      <P><%= blog.user.email %></P>
-      <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
-      <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
-    </div>
+      <div class="row">
+        <div class="field">
+          <%= link_to blog_path(blog) do %>
+            <h4><strong><%= blog.title %></strong></h4>
+          <% end %>
+          
+          <%= image_tag(blog.user.image_url) %>
+          <p><%= blog.content %></p>
+          <P><%= blog.user.name %></P>
+          <P><%= blog.user.email %></P>
+          <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
+          <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
-
+  
 <div id="b_page-top-btn" class="b_page-top-btn">
     <p><a class="b_move-page-top" id="b_move-page-top">▲</a></p>
 </div>
